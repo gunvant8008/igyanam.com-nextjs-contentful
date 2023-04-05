@@ -24,7 +24,8 @@
     "**/*.tsx",
     "src/datalayer/contentful/client.js",
     "src/datalayer/contentful/homePage.js",
-    "src/datalayer/index.js"
+    "src/datalayer/index.js",
+    "src/lib/clsxm.js"
   ],
   "exclude": ["node_modules"]
 }
