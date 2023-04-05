@@ -30,7 +30,7 @@ const HeroBanner = ({
       <div className="absolute bg-gradient-to-br from-black to-gray-700 h-full top-0 -left-full -right-full -z-10 min-w-[100vw] " />
       {/* left section */}
       <div className="gap-y-6 flex flex-col col-span-1">
-        <h1>{title}</h1>
+        <h1 className=" leading-[3rem]">{title}</h1>
         <h4>{subTitle}</h4>
         <p>{description} </p>
         <ButtonLink
@@ -47,10 +47,10 @@ const HeroBanner = ({
         <Image
           src={heroImage?.url}
           alt="hero Image"
-          width={heroImage?.width}
-          height={heroImage?.height}
+          width={1000}
+          height={1000}
           sizes="100vw"
-          className="rounded-xl w-full h-auto"
+          className="min-h-[60vh]"
         />
       </div>
     </div>

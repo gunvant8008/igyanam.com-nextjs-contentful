@@ -1,11 +1,12 @@
 import Image from "next/image"
+import Link from "next/link"
 import React from "react"
 import { AiFillInstagram, AiFillLinkedin, AiFillMail } from "react-icons/ai"
 
 const Footer = () => {
   return (
-    <footer className="z-50 layout bg-gray-200">
-      <div className="grid grid-cols-4 py-12 justify-items-center ">
+    <footer className="layout z-50 bg-gray-200">
+      <div className="justify-items-center  grid grid-cols-4 py-12">
         <div>
           <div className="flex">
             <Image
@@ -24,32 +25,32 @@ const Footer = () => {
         </div>
         <div>
           <h4 className="text-bold mb-2">Resource</h4>
-          <div className="flex flex-col gap-y-1">
-            <a href="/">About Us</a>
-            <a href="/">Contact</a>
-            <a href="/">Blog</a>
-            <a href="/">FAQ</a>
+          <div className="gap-y-1 flex flex-col">
+            <Link href="/">About Us</Link>
+            <Link href="/">Contact</Link>
+            <Link href="/">Blog</Link>
+            <Link href="/">FAQ</Link>
           </div>
         </div>
         <div>
           <h4 className="text-bold mb-2">Legal Stuff</h4>
-          <div className="flex flex-col gap-y-1">
-            <a href="/">Terms & Conditions</a>
-            <a href="/">Privacy Policy</a>
-            <a href="/">Blog</a>
-            <a href="/">FAQ</a>
+          <div className="gap-y-1 flex flex-col">
+            <Link href="/">Terms & Conditions</Link>
+            <Link href="/">Privacy Policy</Link>
+            <Link href="/">Blog</Link>
+            <Link href="/">FAQ</Link>
           </div>
         </div>
         <div>
           <h4 className="text-bold mb-2">Office</h4>
-          <div className="flex flex-col gap-y-1">
+          <div className="gap-y-1 flex flex-col">
             <p>info@igyanam.com</p>
             <p>+91-9999999999</p>
             <p>Kota, Rajasthan.</p>
           </div>
         </div>
       </div>
-      <p className="text-center pb-2">All Right Reserved @iGyanam.com</p>
+      <p className="pb-2 text-center">All Right Reserved @iGyanam.com</p>
     </footer>
   )
 }

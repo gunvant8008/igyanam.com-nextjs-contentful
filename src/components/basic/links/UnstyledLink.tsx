@@ -46,5 +46,5 @@ const UnstyledLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
     )
   }
 )
-
+UnstyledLink.displayName = "UnstyledLink"
 export default UnstyledLink

@@ -39,8 +39,7 @@ const OurClientsSection = ({
   return (
     <div
       className={clsxm(
-        "flex flex-col border border-gray-200 bg-gray-300 border-dashed mt-16 py-12 text-center gap-4 " +
-          className
+        "flex flex-col mt-16 py-12 text-center gap-4 " + className
       )}
     >
       <h1>Trusted By Hundreds Of Institute</h1>

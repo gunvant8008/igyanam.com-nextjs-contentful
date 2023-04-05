@@ -139,5 +139,6 @@ const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
     )
   }
 )
+ButtonLink.displayName = "ButtonLink"
 
 export default ButtonLink

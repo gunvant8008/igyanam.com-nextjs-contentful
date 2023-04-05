@@ -47,8 +47,7 @@ const FeaturesSection = ({ className, features }: FeaturesSectionProps) => {
   return (
     <div
       className={clsxm(
-        "flex flex-col border border-gray-200 bg-gray-300 border-dashed mt-16 pt-12 text-center gap-4 " +
-          className
+        "flex flex-col mt-16 pt-12 text-center gap-4 " + className
       )}
     >
       <h1>Most Loved Features</h1>

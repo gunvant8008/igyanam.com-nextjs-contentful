@@ -50,8 +50,7 @@ const TestimonialsSection = ({
   return (
     <div
       className={clsxm(
-        "flex flex-col border border-gray-200 bg-gray-300 border-dashed mt-16 py-12 text-center gap-4 " +
-          className
+        "flex flex-col mt-16 py-12 text-center gap-4 " + className
       )}
     >
       <h1>What Our Clients Say About Our Product</h1>
