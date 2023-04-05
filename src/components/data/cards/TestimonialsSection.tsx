@@ -1,8 +1,21 @@
 import clsxm from "@/lib/clsxm"
+import { Testimonial, urlImage } from "@/types"
 import Image from "next/image"
 import React from "react"
 
-export const TestimonialCard = ({ logoUrl, subTitle, desc, title }: any) => {
+type TestimonialCardProps = {
+  imgUrl?: urlImage
+  title?: string
+  subTitle?: string
+  desc?: string
+}
+
+export const TestimonialCard = ({
+  imgUrl,
+  subTitle,
+  desc,
+  title
+}: TestimonialCardProps) => {
   return (
     <div
       className={clsxm("flex flex-col p-5 shadow-lg text-left gap-y-2 border ")}
@@ -10,12 +23,12 @@ export const TestimonialCard = ({ logoUrl, subTitle, desc, title }: any) => {
       <p>{desc}</p>
       <div className="gap-x-4 flex">
         <Image
-          src="/images/igyanamLogo.png"
+          src={imgUrl.url}
           alt="logo"
           width="50"
           height="50"
           sizes="100vw"
-          className="rounded-full"
+          className="rounded-xl"
         />
         <div>
           <h4>{title}</h4>
@@ -25,8 +38,15 @@ export const TestimonialCard = ({ logoUrl, subTitle, desc, title }: any) => {
     </div>
   )
 }
-
-const TestimonialsSection = ({ className }: any) => {
+type TestimonialsSectionProps = {
+  className: string
+  testimonials: Testimonial[]
+}
+const TestimonialsSection = ({
+  className,
+  testimonials
+}: TestimonialsSectionProps) => {
+  console.log(testimonials)
   return (
     <div
       className={clsxm(
@@ -36,43 +56,16 @@ const TestimonialsSection = ({ className }: any) => {
     >
       <h1>What Our Clients Say About Our Product</h1>
       <p>Our clients are in love with Gyanam Test Generator.</p>
-      <div className="sm:grid-cols-3 gap-7 grid grid-cols-1 py-8">
-        <TestimonialCard
-          imgUrl="/"
-          title="Gyanam IIT"
-          subTitle="Director- Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-        />
-        <TestimonialCard
-          imgUrl="/"
-          title="Gyanam IIT"
-          subTitle="Director- Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-        />
-        <TestimonialCard
-          imgUrl="/"
-          title="Gyanam IIT"
-          subTitle="Director- Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-        />
-        <TestimonialCard
-          imgUrl="/"
-          title="Gyanam IIT"
-          subTitle="Director- Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-        />
-        <TestimonialCard
-          imgUrl="/"
-          title="Gyanam IIT"
-          subTitle="Director- Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-        />
-        <TestimonialCard
-          imgUrl="/"
-          title="Gyanam IIT"
-          subTitle="Director- Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-        />
+      <div className="sm:grid-cols-2 gap-7 grid grid-cols-1 py-8">
+        {testimonials.map(testimonial => (
+          <TestimonialCard
+            key={testimonial.instituteName}
+            imgUrl={testimonial.instituteImage}
+            title={testimonial.instituteName}
+            subTitle={testimonial.instituteDirector}
+            desc={testimonial.instituteText}
+          />
+        ))}
       </div>
     </div>
   )

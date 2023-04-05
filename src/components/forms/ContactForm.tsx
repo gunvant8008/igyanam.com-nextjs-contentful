@@ -1,8 +1,13 @@
 import clsxm from "@/lib/clsxm"
 import React from "react"
 import Button from "../basic/buttons/Button"
+import { ContactDetail } from "@/types"
 
-const ContactForm = ({ className }: any) => {
+type ContactFormProps = {
+  className: string
+  contactDetails: ContactDetail[]
+}
+const ContactForm = ({ className, contactDetails }: ContactFormProps) => {
   return (
     <div
       className={clsxm(
@@ -15,7 +20,7 @@ const ContactForm = ({ className }: any) => {
         Request a free demo & see all the powerful features of our test
         generator
       </p>
-      <form className="flex gap-x-2 mt-2 justify-center">
+      <form className="gap-x-2 flex justify-center mt-2">
         <input placeholder="Email address" type="text" />
         <input placeholder="Phone no" type="text" />
         <Button variant="primary">Request Demo</Button>

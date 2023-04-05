@@ -1,27 +1,41 @@
 import clsxm from "@/lib/clsxm"
+import { Client, urlImage } from "@/types"
 import Image from "next/image"
 import React from "react"
 
-export const ClientCard = ({ logoUrl, desc, title }: any) => {
+type ClientCardProps = {
+  logo?: urlImage
+  name?: string
+}
+
+export const ClientCard = ({ logo, name }: ClientCardProps) => {
   return (
     <div
-      className={clsxm("flex flex-col p-5 shadow-lg text-left gap-y-2 border ")}
+      className={clsxm(
+        "flex flex-col items-center p-5 shadow-lg text-left gap-y-2 border "
+      )}
     >
       <Image
-        src="/images/igyanamLogo.png"
+        src={logo.url}
         alt="logo"
-        width="100"
-        height="100"
+        width={100}
+        height={100}
         sizes="100vw"
-        // className="w-full rounded-xl"
+        // className="rounded-xl w-full"
       />
-      <h3>{title}</h3>
-      <p>{desc}</p>
+      <p>{name}</p>
     </div>
   )
 }
-
-const OurClientsSection = ({ className }: any) => {
+type OurClientsSectionProps = {
+  className: string
+  ourClients: Client[]
+}
+const OurClientsSection = ({
+  className,
+  ourClients
+}: OurClientsSectionProps) => {
+  console.log(ourClients)
   return (
     <div
       className={clsxm(
@@ -34,14 +48,10 @@ const OurClientsSection = ({ className }: any) => {
         Our product is used throughout the country by so many well established
         institutes.
       </p>
-      <div className="flex flex-wrap justify-center py-8 gap-7">
-        <ClientCard imgUrl="/" title="Gyanam IIT" desc="Kota Rajasthan" />
-        <ClientCard imgUrl="/" title="Gyanam IIT" desc="Kota Rajasthan" />
-        <ClientCard imgUrl="/" title="Gyanam IIT" desc="Kota Rajasthan" />
-        <ClientCard imgUrl="/" title="Gyanam IIT" desc="Kota Rajasthan" />
-        <ClientCard imgUrl="/" title="Gyanam IIT" desc="Kota Rajasthan" />
-        <ClientCard imgUrl="/" title="Gyanam IIT" desc="Kota Rajasthan" />
-        <ClientCard imgUrl="/" title="Gyanam IIT" desc="Kota Rajasthan" />
+      <div className="gap-7 grid grid-cols-4 py-8">
+        {ourClients.map(client => (
+          <ClientCard key={client.name} logo={client.logo} name={client.name} />
+        ))}
       </div>
     </div>
   )

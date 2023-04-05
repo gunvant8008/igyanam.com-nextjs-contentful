@@ -2,9 +2,13 @@ import * as React from "react"
 
 import clsxm from "@/lib/clsxm"
 
-const TextButtonVariant = ["primary", "basic"]
+const TextButtonVariant = ["primary", "basic"] as const
 
-const TextButton = React.forwardRef(
+type TextButtonProps = {
+  variant?: typeof TextButtonVariant[number]
+} & React.ComponentPropsWithRef<"button">
+
+const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
   (
     {
       children,
@@ -12,7 +16,7 @@ const TextButton = React.forwardRef(
       variant = "primary",
       disabled: buttonDisabled,
       ...rest
-    }: any,
+    },
     ref
   ) => {
     return (

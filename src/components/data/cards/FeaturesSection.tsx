@@ -1,8 +1,17 @@
 import Button from "@/components/basic/buttons/Button"
 import ButtonLink from "@/components/basic/links/ButtonLink"
 import clsxm from "@/lib/clsxm"
+import { Feature } from "@/types"
 import Image from "next/image"
 import React from "react"
+
+type FeatureCardProps = {
+  imgUrl?: string
+  title?: string
+  subTitle?: string
+  desc?: string
+  className?: string
+}
 
 export const FeatureCard = ({
   imgUrl,
@@ -10,7 +19,7 @@ export const FeatureCard = ({
   subTitle,
   desc,
   className
-}: any) => {
+}: FeatureCardProps) => {
   return (
     <div
       className={clsxm(
@@ -20,18 +29,21 @@ export const FeatureCard = ({
       <Image
         src="/images/igyanamLogo.png"
         alt="hero Image"
-        width="100"
-        height="100"
+        width="300"
+        height="300"
         sizes="100vw"
-        className="rounded-xl w-full"
+        className="rounded-xl"
       />
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{desc}</p>
     </div>
   )
 }
-
-const FeaturesSection = ({ className }: any) => {
+type FeaturesSectionProps = {
+  className: string
+  features: Feature[]
+}
+const FeaturesSection = ({ className, features }: FeaturesSectionProps) => {
   return (
     <div
       className={clsxm(
@@ -41,22 +53,15 @@ const FeaturesSection = ({ className }: any) => {
     >
       <h1>Most Loved Features</h1>
       <p>List of most loved features by our clients</p>
-      <div className="gap-7 sm:flex-row flex flex-col py-8">
-        <FeatureCard
-          imgUrl="/"
-          title="Figma"
-          desc="This is description. This is description. This is description. This is description."
-        />
-        <FeatureCard
-          imgUrl="/"
-          title="Figma"
-          desc="This is description. This is description. This is description. This is description."
-        />
-        <FeatureCard
-          imgUrl="/"
-          title="Figma"
-          desc="This is description. This is description. This is description. This is description."
-        />
+      <div className="gap-7 grid grid-cols-3 py-8">
+        {features.reverse().map(feature => (
+          <FeatureCard
+            key={feature.featuresTitle}
+            imgUrl={feature.featureImage.url}
+            title={feature.featuresTitle}
+            desc={feature.featureDescription}
+          />
+        ))}
       </div>
       <ButtonLink href="/" variant="dark" className="self-center mb-2">
         See All Features

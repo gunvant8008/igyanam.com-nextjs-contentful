@@ -3,11 +3,16 @@ import * as React from "react"
 
 import clsxm from "@/lib/clsxm"
 
-const UnstyledLink = React.forwardRef(
-  (
-    { children, href, openNewTab, className, nextLinkProps, ...rest }: any,
-    ref
-  ) => {
+export type UnstyledLinkProps = {
+  href: string
+  children: React.ReactNode
+  openNewTab?: boolean
+  className?: string
+  nextLinkProps?: Omit<LinkProps, "href">
+} & React.ComponentPropsWithRef<"a">
+
+const UnstyledLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
+  ({ children, href, openNewTab, className, nextLinkProps, ...rest }, ref) => {
     const isNewTab =
       openNewTab !== undefined
         ? openNewTab

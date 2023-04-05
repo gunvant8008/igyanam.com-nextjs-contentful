@@ -18,7 +18,12 @@ const defaultMeta = {
   image: "https://tsnext-tw.thcl.dev/images/large-og.png"
 }
 
-export default function Seo(props: any) {
+type SeoProps = {
+  date?: string
+  templateTitle?: string
+} & Partial<typeof defaultMeta>
+
+export default function Seo(props: SeoProps) {
   const router = useRouter()
   const meta = {
     ...defaultMeta,

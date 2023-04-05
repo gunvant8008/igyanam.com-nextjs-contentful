@@ -2,12 +2,18 @@ import * as React from "react"
 
 import clsxm from "@/lib/clsxm"
 
-import UnstyledLink from "@/components/basic/links/UnstyledLink"
+import UnstyledLink, {
+  UnstyledLinkProps
+} from "@/components/basic/links/UnstyledLink"
 
-const PrimaryLinkVariant = ["primary", "basic"]
+const PrimaryLinkVariant = ["primary", "basic"] as const
 
-const PrimaryLink = React.forwardRef(
-  ({ className, children, variant = "primary", ...rest }: any, ref) => {
+type PrimaryLinkProps = {
+  variant?: typeof PrimaryLinkVariant[number]
+} & UnstyledLinkProps
+
+const PrimaryLink = React.forwardRef<HTMLAnchorElement, PrimaryLinkProps>(
+  ({ className, children, variant = "primary", ...rest }, ref) => {
     return (
       <UnstyledLink
         ref={ref}

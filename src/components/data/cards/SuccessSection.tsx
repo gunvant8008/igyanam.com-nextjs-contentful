@@ -4,6 +4,15 @@ import clsxm from "@/lib/clsxm"
 import Image from "next/image"
 import React from "react"
 
+type SuccessCardProps = {
+  imgUrl?: string
+  college?: string
+  institute?: string
+  title?: string
+  rank?: string
+  desc?: string
+  className?: string
+}
 export const SuccessCard = ({
   college,
   institute,
@@ -11,7 +20,7 @@ export const SuccessCard = ({
   rank,
   desc,
   className
-}: any) => {
+}: SuccessCardProps) => {
   return (
     <div
       className={clsxm(
@@ -40,7 +49,9 @@ export const SuccessCard = ({
   )
 }
 
-const SuccessSection = ({ className }: any) => {
+type SuccessSectionProps = React.ComponentPropsWithoutRef<"div">
+
+const SuccessSection = ({ className }: SuccessSectionProps) => {
   return (
     <div
       className={clsxm(

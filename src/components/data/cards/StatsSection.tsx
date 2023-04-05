@@ -1,7 +1,19 @@
 import clsxm from "@/lib/clsxm"
 import React from "react"
 
-export const StatCard = ({ title, subTitle, desc, className }: any) => {
+type StatCardProps = {
+  title?: string
+  subTitle?: string
+  desc?: string
+  className?: string
+}
+
+export const StatCard = ({
+  title,
+  subTitle,
+  desc,
+  className
+}: StatCardProps) => {
   return (
     <div className={clsxm("flex flex-col gap-y-2 py-6 px-12 " + className)}>
       <h2>{title}</h2>
@@ -10,8 +22,9 @@ export const StatCard = ({ title, subTitle, desc, className }: any) => {
     </div>
   )
 }
+type StatsSectionProps = React.ComponentPropsWithoutRef<"div">
 
-const StatsSection = ({ className }: any) => {
+const StatsSection = ({ className }: StatsSectionProps) => {
   return (
     <div
       className={clsxm(

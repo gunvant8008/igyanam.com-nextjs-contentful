@@ -4,9 +4,23 @@ import { ImSpinner2 } from "react-icons/im"
 
 import clsxm from "@/lib/clsxm"
 
-const IconButtonVariant = ["primary", "outline", "ghost", "light", "dark"]
+const IconButtonVariant = [
+  "primary",
+  "outline",
+  "ghost",
+  "light",
+  "dark"
+] as const
 
-const IconButton = React.forwardRef(
+type IconButtonProps = {
+  isLoading?: boolean
+  isDarkBg?: boolean
+  variant?: typeof IconButtonVariant[number]
+  icon?: IconType
+  iconClassName?: string
+} & React.ComponentPropsWithRef<"button">
+
+const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   (
     {
       className,
@@ -17,7 +31,7 @@ const IconButton = React.forwardRef(
       icon: Icon,
       iconClassName,
       ...rest
-    }: any,
+    },
     ref
   ) => {
     const disabled = isLoading || buttonDisabled

@@ -3,6 +3,17 @@ import * as React from "react"
 
 import clsxm from "@/lib/clsxm"
 
+type NextImageProps = {
+  useSkeleton?: boolean
+  imgClassName?: string
+  blurClassName?: string
+  alt: string
+} & (
+  | { width: string | number; height: string | number }
+  | { layout: "fill"; width?: string | number; height: string | number }
+) &
+  ImageProps
+
 /**
  *
  * @description Must set width using `w-` className
@@ -18,7 +29,7 @@ export default function NextImage({
   imgClassName,
   blurClassName,
   ...rest
-}: any) {
+}: NextImageProps) {
   const [status, setStatus] = React.useState(
     useSkeleton ? "loading" : "complete"
   )

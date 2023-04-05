@@ -3,6 +3,15 @@ import React from "react"
 import clsxm from "@/lib/clsxm"
 import Image from "next/image"
 import ButtonLink from "@/components/basic/links/ButtonLink"
+import { Description, SubTitle, Title, urlImage } from "@/types"
+
+type HeroBannerProps = {
+  className?: string
+  title: Title
+  subTitle: SubTitle
+  description: Description
+  heroImage?: urlImage
+}
 
 const HeroBanner = ({
   className,
@@ -10,7 +19,7 @@ const HeroBanner = ({
   subTitle,
   description,
   heroImage
-}: any) => {
+}: HeroBannerProps) => {
   return (
     <div
       className={clsxm(
@@ -36,10 +45,10 @@ const HeroBanner = ({
       {/* Right section */}
       <div>
         <Image
-          src={heroImage.url}
+          src={heroImage?.url}
           alt="hero Image"
-          width={heroImage.width}
-          height={heroImage.height}
+          width={heroImage?.width}
+          height={heroImage?.height}
           sizes="100vw"
           className="rounded-xl w-full h-auto"
         />

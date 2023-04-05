@@ -3,12 +3,31 @@ import { IconType } from "react-icons"
 
 import clsxm from "@/lib/clsxm"
 
-import UnstyledLink from "@/components/basic/links/UnstyledLink"
+import UnstyledLink, {
+  UnstyledLinkProps
+} from "@/components/basic/links/UnstyledLink"
 
-const ButtonLinkVariant = ["primary", "outline", "ghost", "light", "dark"]
-const ButtonLinkSize = ["sm", "base"]
+const ButtonLinkVariant = [
+  "primary",
+  "outline",
+  "ghost",
+  "light",
+  "dark"
+] as const
+const ButtonLinkSize = ["sm", "base"] as const
 
-const ButtonLink = React.forwardRef(
+type ButtonLinkProps = {
+  direction?: string
+  isDarkBg?: boolean
+  variant?: typeof ButtonLinkVariant[number]
+  size?: typeof ButtonLinkSize[number]
+  leftIcon?: IconType
+  rightIcon?: IconType
+  leftIconClassName?: string
+  rightIconClassName?: string
+} & UnstyledLinkProps
+
+const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   (
     {
       children,
@@ -21,7 +40,7 @@ const ButtonLink = React.forwardRef(
       leftIconClassName,
       rightIconClassName,
       ...rest
-    }: any,
+    },
     ref
   ) => {
     return (

@@ -1,3 +1,13 @@
+import {
+  Client,
+  ContactDetail,
+  Description,
+  Feature,
+  SubTitle,
+  Testimonial,
+  Title,
+  urlImage
+} from "@/types"
 import FeaturesSection from "../data/cards/FeaturesSection"
 import HeroBanner from "../data/cards/HeroBanner"
 import OurClientsSection from "../data/cards/OurClientsSection"
@@ -6,7 +16,22 @@ import SuccessSection from "../data/cards/SuccessSection"
 import TestimonialsSection from "../data/cards/TestimonialsSection"
 import ContactForm from "../forms/ContactForm"
 
-const HomePage = ({ homePageData }: any) => {
+type HomePageData = {
+  title: Title
+  subTitle: SubTitle
+  description: Description
+  logo: urlImage
+  testimonials: Testimonial[]
+  ourClients: Client[]
+  heroImage: urlImage
+  features: Feature[]
+  contactDetails: ContactDetail[]
+}
+type HomePageProps = {
+  homePageData: HomePageData
+}
+
+const HomePage = ({ homePageData }: HomePageProps) => {
   const {
     title,
     subTitle,
@@ -19,9 +44,9 @@ const HomePage = ({ homePageData }: any) => {
     contactDetails
   } = homePageData
   return (
-    <div className="min-h-main grid grid-cols-12 items-start ">
+    <div className="min-h-main grid items-start grid-cols-12">
       <HeroBanner
-        className="col-span-12 "
+        className="col-span-12"
         title={title}
         subTitle={subTitle}
         description={description}
