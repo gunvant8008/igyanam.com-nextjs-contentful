@@ -1,8 +1,8 @@
 import Head from "next/head"
-import HomePage from "@/components/ui/HomePage"
+import HomePage, { HomePageProps } from "@/components/ui/HomePage"
 import { getHomePageData } from "@/datalayer"
 
-export default function Index({ homePageData }) {
+export default function Index({ homePageData }: HomePageProps) {
   return (
     <>
       <Head>

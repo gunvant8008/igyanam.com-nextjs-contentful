@@ -1,4 +1,4 @@
-import client from "./client"
+import client from "./client.js"
 
 export const getHomePageData = async () => {
   const res = await client.getEntries({

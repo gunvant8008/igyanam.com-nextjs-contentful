@@ -16,7 +16,7 @@ import SuccessSection from "../data/cards/SuccessSection"
 import TestimonialsSection from "../data/cards/TestimonialsSection"
 import ContactForm from "../forms/ContactForm"
 
-type HomePageData = {
+export type HomePageDataProps = {
   title: Title
   subTitle: SubTitle
   description: Description
@@ -27,8 +27,8 @@ type HomePageData = {
   features: Feature[]
   contactDetails: ContactDetail[]
 }
-type HomePageProps = {
-  homePageData: HomePageData
+export type HomePageProps = {
+  homePageData: HomePageDataProps
 }
 
 const HomePage = ({ homePageData }: HomePageProps) => {

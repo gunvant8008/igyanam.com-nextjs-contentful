@@ -18,6 +18,13 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/datalayer/contentful/client.js",
+    "src/datalayer/contentful/homePage.js",
+    "src/datalayer/index.js"
+  ],
   "exclude": ["node_modules"]
 }
