@@ -35,17 +35,17 @@ const StatsSection = ({ className }: StatsSectionProps) => {
       <StatCard
         title="1000+"
         subTitle="Clients"
-        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        desc="Our test generator is used by 1000+ clients across the globe."
       />
       <StatCard
         title="50+"
         subTitle="Features"
-        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+        desc="We are constantly adding new features to our test generator."
       />
       <StatCard
         title="1000+"
         subTitle="Success Stories"
-        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+        desc="In the end it's all about the success of our clients & their students."
       />
     </div>
   )

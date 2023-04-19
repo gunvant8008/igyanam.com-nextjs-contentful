@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,6 +30,7 @@
 
 @layer base {
   /* inter var - latin */
+ 
   @font-face {
     font-family: "Inter";
     font-style: normal;
@@ -39,7 +41,9 @@
       U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
       U+2215, U+FEFF, U+FFFD;
   }
-
+  
+  /* ibm-plex-mono-regular - latin */
+ 
   .cursor-newtab {
     cursor: url("/images/new-tab.png") 10 10, pointer;
   }

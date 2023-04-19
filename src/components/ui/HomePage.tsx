@@ -4,6 +4,7 @@ import {
   Description,
   Feature,
   SubTitle,
+  SuccessStory,
   Testimonial,
   Title,
   urlImage
@@ -26,6 +27,7 @@ export type HomePageDataProps = {
   heroImage: urlImage
   features: Feature[]
   contactDetails: ContactDetail[]
+  successStory: SuccessStory[]
 }
 export type HomePageProps = {
   homePageData: HomePageDataProps
@@ -41,7 +43,8 @@ const HomePage = ({ homePageData }: HomePageProps) => {
     ourClients,
     heroImage,
     features,
-    contactDetails
+    contactDetails,
+    successStory
   } = homePageData
   return (
     <div className="min-h-main grid items-start grid-cols-12">
@@ -54,7 +57,7 @@ const HomePage = ({ homePageData }: HomePageProps) => {
       />
       <StatsSection className="col-span-12" />
       <FeaturesSection className="col-span-12" features={features} />
-      <SuccessSection className="col-span-12" />
+      <SuccessSection className="col-span-12" successStories={successStory} />
       <OurClientsSection className="col-span-12" ourClients={ourClients} />
       <TestimonialsSection
         className="col-span-12"

@@ -29,7 +29,7 @@ const HeroBanner = ({
     >
       <div className="absolute bg-gradient-to-br from-black to-gray-700 h-full top-0 -left-full -right-full -z-10 min-w-[100vw] " />
       {/* left section */}
-      <div className="gap-y-6 flex flex-col col-span-1">
+      <div className="gap-y-8 flex flex-col col-span-1">
         <h1 className=" leading-[3rem]">{title}</h1>
         <h4>{subTitle}</h4>
         <p>{description} </p>
@@ -50,7 +50,7 @@ const HeroBanner = ({
           width={1000}
           height={1000}
           sizes="100vw"
-          className="min-h-[60vh]"
+          className="min-h-full"
         />
       </div>
     </div>

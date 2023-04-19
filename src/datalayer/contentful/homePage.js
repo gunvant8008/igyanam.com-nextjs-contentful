@@ -8,6 +8,7 @@ export const getHomePageData = async () => {
   const rawResponse = res.items
   const response = homePageReducer(rawResponse)
   return response
+  // return rawResponse
 }
 
 export const homePageReducer = rawResponse => {
@@ -26,6 +27,9 @@ export const homePageReducer = rawResponse => {
   data.contactDetails = fields.contactDetails.map(contact =>
     contactReducer(contact)
   )
+  data.successStory = fields.successStory.map(successStory =>
+    successStoryReducer(successStory)
+  )
   return data
 }
 export const imageReducer = imageField => {
@@ -39,6 +43,7 @@ export const featureReducer = featuresField => {
   return {
     featuresTitle: featuresField.fields.featureTitle,
     featureDescription: featuresField.fields.featureDescription,
+    featureVideo: featuresField.fields?.featureVideo || null,
     featureImage: imageReducer(featuresField.fields.featureImage)
   }
 }
@@ -61,5 +66,16 @@ export const contactReducer = contactField => {
   return {
     contactTitle: contactField.fields.contactTitle,
     contactDetails: contactField.fields.contactDetails
+  }
+}
+
+export const successStoryReducer = successStoryField => {
+  return {
+    studentName: successStoryField.fields.studentName,
+    instituteName: successStoryField.fields.instituteName,
+    successStory: successStoryField.fields.successStory,
+    collegeName: successStoryField.fields.collegeName,
+    examAndRank: successStoryField.fields.examAndRank,
+    studentImage: imageReducer(successStoryField.fields.studentImage)
   }
 }

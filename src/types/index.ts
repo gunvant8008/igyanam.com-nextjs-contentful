@@ -7,6 +7,7 @@ export type Feature = {
   featureDescription?: string
   featureImage?: urlImage
   featuresTitle?: string
+  featureVideo?: string
 }
 export type Client = {
   logo?: urlImage
@@ -17,6 +18,14 @@ export type Testimonial = {
   instituteImage?: urlImage
   instituteName?: string
   instituteText?: string
+}
+export type SuccessStory = {
+  studentName?: string
+  instituteName?: string
+  successStory?: string
+  collegeName?: string
+  examAndRank?: string
+  studentImage?: urlImage
 }
 export type Description = string
 export type IntroDescription = string

@@ -12,7 +12,7 @@ export const ClientCard = ({ logo, name }: ClientCardProps) => {
   return (
     <div
       className={clsxm(
-        "flex flex-col items-center p-5 shadow-lg text-left gap-y-2 border "
+        "flex flex-col items-center justify-center p-5 shadow-lg text-left gap-y-2 border "
       )}
     >
       <Image
@@ -21,9 +21,9 @@ export const ClientCard = ({ logo, name }: ClientCardProps) => {
         width={100}
         height={100}
         sizes="100vw"
-        // className="rounded-xl w-full"
+        className="w-1/2"
       />
-      <p>{name}</p>
+      <p className="font-bold">{name}</p>
     </div>
   )
 }
@@ -35,7 +35,6 @@ const OurClientsSection = ({
   className,
   ourClients
 }: OurClientsSectionProps) => {
-  console.log(ourClients)
   return (
     <div
       className={clsxm(
@@ -47,7 +46,7 @@ const OurClientsSection = ({
         Our product is used throughout the country by so many well established
         institutes.
       </p>
-      <div className="gap-7 grid grid-cols-4 py-8">
+      <div className="gap-7 md:grid-cols-4 grid grid-cols-2 py-8">
         {ourClients.map(client => (
           <ClientCard key={client.name} logo={client.logo} name={client.name} />
         ))}

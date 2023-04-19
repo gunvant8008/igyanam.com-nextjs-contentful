@@ -16,7 +16,7 @@ export default function Index({ homePageData }: HomePageProps) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const homePageData = await getHomePageData()
   return {
     props: {

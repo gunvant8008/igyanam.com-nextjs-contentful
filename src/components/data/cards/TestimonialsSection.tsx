@@ -46,7 +46,6 @@ const TestimonialsSection = ({
   className,
   testimonials
 }: TestimonialsSectionProps) => {
-  console.log(testimonials)
   return (
     <div
       className={clsxm(
@@ -55,7 +54,7 @@ const TestimonialsSection = ({
     >
       <h1>What Our Clients Say About Our Product</h1>
       <p>Our clients are in love with Gyanam Test Generator.</p>
-      <div className="sm:grid-cols-2 gap-7 grid grid-cols-1 py-8">
+      <div className="md:grid-cols-2 gap-7 grid grid-cols-1 py-8">
         {testimonials.map(testimonial => (
           <TestimonialCard
             key={testimonial.instituteName}

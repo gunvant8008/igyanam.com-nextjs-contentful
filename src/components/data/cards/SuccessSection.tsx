@@ -1,6 +1,7 @@
 import Button from "@/components/basic/buttons/Button"
 import ButtonLink from "@/components/basic/links/ButtonLink"
 import clsxm from "@/lib/clsxm"
+import { SuccessStory } from "@/types"
 import Image from "next/image"
 import React from "react"
 
@@ -49,9 +50,12 @@ export const SuccessCard = ({
   )
 }
 
-type SuccessSectionProps = React.ComponentPropsWithoutRef<"div">
+type SuccessSectionProps = {
+  className: string
+  successStories: SuccessStory[]
+}
 
-const SuccessSection = ({ className }: SuccessSectionProps) => {
+const SuccessSection = ({ className, successStories }: SuccessSectionProps) => {
   return (
     <div
       className={clsxm(
@@ -62,43 +66,19 @@ const SuccessSection = ({ className }: SuccessSectionProps) => {
       <div className="absolute bg-gray-100 h-full top-0 -left-full -right-full -z-10 min-w-[100vw] " />
       <h1>Student & Institutes Success Stories</h1>
       <p>We feel so proud that our product is changing lives.</p>
-      <div className="sm:grid-cols-2 grid grid-cols-1 gap-12 py-8">
-        <SuccessCard
-          imgUrl="/"
-          title="Student Name"
-          institute="Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-          college="college"
-          rank="rank"
-          className="col-span-1"
-        />
-        <SuccessCard
-          imgUrl="/"
-          title="Student Name"
-          institute="Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-          college="college"
-          rank="rank"
-          className="col-span-1"
-        />
-        <SuccessCard
-          imgUrl="/"
-          title="Student Name"
-          institute="Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-          college="college"
-          rank="rank"
-          className="col-span-1"
-        />
-        <SuccessCard
-          imgUrl="/"
-          title="Student Name"
-          institute="Gyanam IIT"
-          desc="This is description. This is description. This is description. This is description."
-          college="college"
-          rank="rank"
-          className="col-span-1"
-        />
+      <div className="md:grid-cols-2 grid grid-cols-1 gap-12 py-8">
+        {successStories.map(successStory => (
+          <SuccessCard
+            key={successStory.studentName}
+            imgUrl={successStory.studentImage.url}
+            title={successStory.studentName}
+            institute={successStory.instituteName}
+            desc={`${successStory.successStory?.substring(0, 100)}...`}
+            college={successStory.collegeName}
+            rank={successStory.examAndRank}
+            className="col-span-1"
+          />
+        ))}
       </div>
       <ButtonLink href="/" variant="dark" className="self-center mb-2">
         More Success Stories
