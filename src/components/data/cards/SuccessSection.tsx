@@ -57,7 +57,6 @@ type SuccessSectionProps = {
 }
 
 const SuccessSection = ({ className, successStories }: SuccessSectionProps) => {
-  console.log(successStories)
   return (
     <div
       className={clsxm(

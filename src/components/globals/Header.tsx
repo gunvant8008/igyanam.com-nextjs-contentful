@@ -9,7 +9,8 @@ import { useAutoAnimate } from "@formkit/auto-animate/react"
 const links = [
   { href: "/", label: "Home" },
   { href: "/features", label: "Features" },
-  { href: "/success-stories", label: "Success-Stories" }
+  { href: "/success-stories", label: "Success-Stories" },
+  { href: "/contact", label: "Contact" }
 ]
 
 export default function Header() {

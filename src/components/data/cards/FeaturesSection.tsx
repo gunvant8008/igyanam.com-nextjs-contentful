@@ -53,7 +53,6 @@ type FeaturesSectionProps = {
   features: Feature[]
 }
 const FeaturesSection = ({ className, features }: FeaturesSectionProps) => {
-  console.log(features)
   return (
     <div
       id="features"

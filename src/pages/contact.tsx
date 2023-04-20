@@ -1,7 +1,8 @@
+import ContactFormWithMap from "@/components/forms/ContactFormWithMap"
 import React from "react"
 
 const Contact = () => {
-  return <div>Contact</div>
+  return <ContactFormWithMap />
 }
 
 export default Contact
