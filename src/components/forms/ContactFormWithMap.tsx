@@ -39,7 +39,7 @@ const ContactFormWithMap = () => {
         </div>
         <div className="lg:w-1/3 md:w-1/2 md:ml-auto md:py-8 md:mt-0 flex flex-col w-full mt-8 bg-white">
           <h2 className="title-font mb-1 text-lg font-medium text-gray-900">
-            BOOK A DEMO OR GIVE FEEDBACK
+            BOOK A FREE DEMO
           </h2>
           <p className="mb-5 leading-relaxed text-gray-600">
             Our team will get back to you as soon as possible.

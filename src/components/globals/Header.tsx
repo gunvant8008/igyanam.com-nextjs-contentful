@@ -45,7 +45,11 @@ export default function Header() {
           </ul>
         </nav>
         <div className="gap-x-5 z-50 flex items-center transition-all duration-500">
-          <ButtonLink className="hover:text-black" variant="outline" href="/">
+          <ButtonLink
+            className="hover:text-black"
+            variant="outline"
+            href="/contact"
+          >
             Book Demo
           </ButtonLink>
           <button
