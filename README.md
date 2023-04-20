@@ -1,38 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# About Project
 
-## Getting Started
+## Description
+- This is a business landing page for a SAAS company. 
+- Client wanted a simple and clean design & ability to add or change data if required. Using contentful CMS, client can easily add or change data.  
+- Also user can easily book demo or contact us. So added getform.io for that.
 
-First, run the development server:
+## Design Inspiration
+Design inspiration is taken from this community figma design.
+- [Figma Design](https://www.figma.com/file/CAUUY9dYJELwSHoeQEQpl0/BWA---Gear-(Community)?node-id=1-3)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Technologies
+- Next.js
+- Contentful CMS
+- Tailwind CSS
+- getform.io
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Here is the link to the live site
+- [Live Site](https://igyanam.vercel.app)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Here are some screenshots of the site
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+![Alt text](public/images/Screenshots/SC01.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![Alt text](public/images/Screenshots/SC02.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![Alt text](public/images/Screenshots/SC03.png)
 
-## Learn More
+![Alt text](public/images/Screenshots/SC04.png)
 
-To learn more about Next.js, take a look at the following resources:
+![Alt text](public/images/Screenshots/SC05.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Alt text](public/images/Screenshots/SC06.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Alt text](public/images/Screenshots/SC07.png)
 
-## Deploy on Vercel
+![Alt text](public/images/Screenshots/SC08.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Alt text](public/images/Screenshots/SC09.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
