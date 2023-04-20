@@ -77,7 +77,11 @@ const FeaturesSection = ({ className, features }: FeaturesSectionProps) => {
           }
         })}
       </div>
-      <ButtonLink href="/features" variant="dark" className="self-center mb-2">
+      <ButtonLink
+        href="/features"
+        variant="outline"
+        className=" hover:text-black self-center mb-2 bg-gray-800"
+      >
         See All Features
       </ButtonLink>
     </div>

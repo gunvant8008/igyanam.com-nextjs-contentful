@@ -20,10 +20,16 @@ const ContactForm = ({ className, contactDetails }: ContactFormProps) => {
         Request a free demo & see all the powerful features of our test
         generator
       </p>
-      <form className="gap-x-2 flex justify-center mt-2">
-        <input placeholder="Email address" type="text" />
-        <input placeholder="Phone no" type="text" />
-        <Button variant="primary">Request Demo</Button>
+      <form
+        className="gap-x-2 flex justify-center mt-2"
+        action="https://getform.io/f/562e0962-d97b-40c7-a895-097f42c9c6a4"
+        method="POST"
+      >
+        <input placeholder="Email address" type="email" name="email" />
+        <input placeholder="Phone no" type="text" name="phone" />
+        <Button variant="primary" type="submit">
+          Request Demo
+        </Button>
       </form>
     </div>
   )

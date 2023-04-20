@@ -90,8 +90,8 @@ const SuccessSection = ({ className, successStories }: SuccessSectionProps) => {
       </div>
       <ButtonLink
         href="/success-stories"
-        variant="dark"
-        className="self-center mb-2"
+        variant="outline"
+        className=" hover:text-black self-center mb-2 bg-gray-800"
       >
         More Success Stories
       </ButtonLink>

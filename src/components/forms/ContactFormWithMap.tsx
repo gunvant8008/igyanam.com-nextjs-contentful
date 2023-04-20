@@ -38,50 +38,75 @@ const ContactFormWithMap = () => {
           </div>
         </div>
         <div className="lg:w-1/3 md:w-1/2 md:ml-auto md:py-8 md:mt-0 flex flex-col w-full mt-8 bg-white">
-          <h2 className="title-font mb-1 text-lg font-medium text-gray-900">
+          <h2 className="title-font mb-1 text-lg font-bold text-gray-900">
             BOOK A FREE DEMO
           </h2>
           <p className="mb-5 leading-relaxed text-gray-600">
             Our team will get back to you as soon as possible.
           </p>
-          <div className="relative mb-4">
-            <label htmlFor="name" className="text-sm leading-7 text-gray-600">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className="focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none"
-            />
-          </div>
-          <div className="relative mb-4">
-            <label htmlFor="email" className="text-sm leading-7 text-gray-600">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none"
-            />
-          </div>
-          <div className="relative mb-4">
-            <label
-              htmlFor="message"
-              className="text-sm leading-7 text-gray-600"
+          <form
+            action="https://getform.io/f/562e0962-d97b-40c7-a895-097f42c9c6a4"
+            method="POST"
+          >
+            <div className="relative mb-4">
+              <label htmlFor="name" className="text-sm leading-7 text-gray-600">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none"
+              />
+            </div>
+            <div className="relative mb-4">
+              <label
+                htmlFor="email"
+                className="text-sm leading-7 text-gray-600"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none"
+              />
+            </div>
+            <div className="relative mb-4">
+              <label
+                htmlFor="phone"
+                className="text-sm leading-7 text-gray-600"
+              >
+                Phone
+              </label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                className="focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none"
+              />
+            </div>
+            <div className="relative mb-4">
+              <label
+                htmlFor="message"
+                className="text-sm leading-7 text-gray-600"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                className="focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none resize-none"
+              ></textarea>
+            </div>
+            <button
+              className="focus:outline-none hover:bg-indigo-600 px-6 py-2 text-lg text-white bg-indigo-500 border-0 rounded"
+              type="submit"
             >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              className="focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none resize-none"
-            ></textarea>
-          </div>
-          <button className="focus:outline-none hover:bg-indigo-600 px-6 py-2 text-lg text-white bg-indigo-500 border-0 rounded">
-            Submit
-          </button>
+              Submit
+            </button>
+          </form>
           <p className="mt-3 text-xs text-gray-500">© 2023 iGyanam.com</p>
         </div>
       </div>
