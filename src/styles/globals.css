@@ -28,9 +28,13 @@
   /* #endregion  /**======== Primary Color =========== */
 }
 
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 @layer base {
   /* inter var - latin */
- 
   @font-face {
     font-family: "Inter";
     font-style: normal;

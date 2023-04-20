@@ -1,4 +1,3 @@
-import NextImage from "@/components/basic/NextImage"
 import React from "react"
 import clsxm from "@/lib/clsxm"
 import Image from "next/image"
@@ -23,13 +22,14 @@ const HeroBanner = ({
   return (
     <div
       className={clsxm(
-        "relative text-white grid w-full sm:grid-cols-2 grid-cols-1 items-center justify-items-between gap-10 py-14 text-center sm:text-left " +
+        "relative text-white flex flex-col-reverse justify-center w-full h-full gap-10 py-14 text-center sm:text-left " +
           className
       )}
     >
+      {/* this div is for gradient & full width canvas */}
       <div className="absolute bg-gradient-to-br from-black to-gray-700 h-full top-0 -left-full -right-full -z-10 min-w-[100vw] " />
       {/* left section */}
-      <div className="gap-y-8 flex flex-col col-span-1">
+      <div className="gap-y-8 flex flex-col">
         <h1 className=" leading-[3rem]">{title}</h1>
         <h4>{subTitle}</h4>
         <p>{description} </p>
@@ -43,15 +43,25 @@ const HeroBanner = ({
         </ButtonLink>
       </div>
       {/* Right section */}
-      <div>
+      <div className="relative flex items-center justify-center">
         <Image
           src={heroImage?.url}
           alt="hero Image"
           width={1000}
           height={1000}
           sizes="100vw"
-          className="min-h-full"
+          className="relative w-3/4 h-full"
         />
+        <iframe
+          className="sm:top-5 lg:top-8 top-2 left-25 h-[55%] absolute w-[70%]"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/fbRnlHJVkeo"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
   )

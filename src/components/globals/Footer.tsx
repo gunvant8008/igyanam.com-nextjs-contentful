@@ -5,8 +5,8 @@ import { AiFillInstagram, AiFillLinkedin, AiFillMail } from "react-icons/ai"
 
 const Footer = () => {
   return (
-    <footer className="layout z-50 bg-gray-200">
-      <div className="justify-items-center  grid grid-cols-4 py-12">
+    <footer id="contact" className="layout z-50 bg-gray-200">
+      <div className="justify-items-center grid grid-cols-4 py-12">
         <div>
           <div className="flex">
             <Image

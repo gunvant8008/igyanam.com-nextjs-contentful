@@ -1,27 +1,24 @@
-import Button from "@/components/basic/buttons/Button"
 import ButtonLink from "@/components/basic/links/ButtonLink"
 import clsxm from "@/lib/clsxm"
-import { Feature } from "@/types"
-import Image from "next/image"
+import { Feature, urlImage } from "@/types"
 import React from "react"
 
-type FeatureCardProps = {
+export type TFeature = {
   imgUrl?: string
-  title?: string
+  featureTitle?: string
   subTitle?: string
-  desc?: string
+  featureDescription?: string
   className?: string
-  videoUrl?: string
+  featureVideo?: string
+  featureImage?: urlImage
 }
 
 export const FeatureCard = ({
-  imgUrl,
-  title,
-  subTitle,
-  desc,
+  featureTitle,
+  featureDescription,
   className,
-  videoUrl
-}: FeatureCardProps) => {
+  featureVideo
+}: TFeature) => {
   return (
     <div
       className={clsxm(
@@ -32,7 +29,7 @@ export const FeatureCard = ({
         className="w-full"
         width="560"
         height="315"
-        src={videoUrl}
+        src={featureVideo}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -46,8 +43,8 @@ export const FeatureCard = ({
         sizes="100vw"
         className="rounded-xl"
       /> */}
-      <h3>{title}</h3>
-      <p>{desc}</p>
+      <h3 className="h4 text-primary-400 p-1 bg-gray-600">{featureTitle}</h3>
+      <p>{featureDescription}</p>
     </div>
   )
 }
@@ -59,6 +56,7 @@ const FeaturesSection = ({ className, features }: FeaturesSectionProps) => {
   console.log(features)
   return (
     <div
+      id="features"
       className={clsxm(
         "flex flex-col mt-16 pt-12 text-center gap-4 " + className
       )}
@@ -66,17 +64,21 @@ const FeaturesSection = ({ className, features }: FeaturesSectionProps) => {
       <h1>Most Loved Features</h1>
       <p>List of most loved features by our clients</p>
       <div className="gap-7 md:grid-cols-2 grid grid-cols-1 py-8">
-        {features.reverse().map(feature => (
-          <FeatureCard
-            key={feature.featuresTitle}
-            imgUrl={feature.featureImage.url}
-            title={feature.featuresTitle}
-            desc={feature.featureDescription}
-            videoUrl={feature.featureVideo}
-          />
-        ))}
+        {features.reverse().map((feature, index) => {
+          while (index < 4) {
+            return (
+              <FeatureCard
+                key={feature.featuresTitle}
+                imgUrl={feature.featureImage.url}
+                featureTitle={feature.featuresTitle}
+                featureDescription={feature.featureDescription}
+                featureVideo={feature.featureVideo}
+              />
+            )
+          }
+        })}
       </div>
-      <ButtonLink href="/" variant="dark" className="self-center mb-2">
+      <ButtonLink href="/features" variant="dark" className="self-center mb-2">
         See All Features
       </ButtonLink>
     </div>

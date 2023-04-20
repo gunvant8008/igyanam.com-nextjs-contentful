@@ -8,9 +8,9 @@ import { useAutoAnimate } from "@formkit/auto-animate/react"
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/", label: "Features" },
-  { href: "/", label: "Blog" },
-  { href: "/", label: "Contact" }
+  { href: "/#features", label: "Features" },
+  { href: "/success-stories", label: "Success-Stories" },
+  { href: "/#contact", label: "Contact" }
 ]
 
 export default function Header() {
@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-gray-800">
       <div className="layout h-15 z-50 flex items-center justify-between text-white">
-        <UnstyledLink href="/" className="hover:text-gray-600 font-bold">
+        <UnstyledLink href="/">
           <NextImage
             width={60}
             alt="logo"
@@ -32,23 +32,21 @@ export default function Header() {
         </UnstyledLink>
         <nav
           className={
-            `md:static md:min-h-fit min-h-[60vh] absolute top-0 z-[-10] duration-500 bg-gray-800 md:w-auto w-full  flex items-center px-7 md:px-0 ` +
+            `md:static md:min-h-fit min-h-[60vh] absolute top-0 duration-500 bg-gray-800 md:w-auto w-full  flex items-center px-7 md:px-0 ` +
             `${menuOpen ? "left-0" : "left-[-100%]"}`
           }
         >
           <ul className="md:flex-row flex flex-col md:items-center md:gap-[4vw] gap-8">
             {links.map(({ href, label }) => (
               <li key={`${href}${label}`}>
-                <UnderlineLink href={href} className="hover:text-gray-200">
-                  {label}
-                </UnderlineLink>
+                <UnderlineLink href={href}>{label}</UnderlineLink>
               </li>
             ))}
           </ul>
         </nav>
-        <div className="gap-x-5 flex items-center transition-all duration-500">
+        <div className="gap-x-5 z-50 flex items-center transition-all duration-500">
           <ButtonLink className="hover:text-black" variant="outline" href="/">
-            Success Stories
+            Book Demo
           </ButtonLink>
           <button
             ref={menuRef}

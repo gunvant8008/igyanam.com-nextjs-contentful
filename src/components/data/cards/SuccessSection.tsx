@@ -1,26 +1,26 @@
-import Button from "@/components/basic/buttons/Button"
 import ButtonLink from "@/components/basic/links/ButtonLink"
 import clsxm from "@/lib/clsxm"
-import { SuccessStory } from "@/types"
+import { SuccessStory, urlImage } from "@/types"
 import Image from "next/image"
 import React from "react"
 
-type SuccessCardProps = {
-  imgUrl?: string
-  college?: string
-  institute?: string
-  title?: string
-  rank?: string
-  desc?: string
+export type SuccessCardProps = {
+  studentImage?: urlImage
+  collegeName?: string
+  instituteName?: string
+  studentName?: string
+  examAndRank?: string
+  successStory?: string
   className?: string
 }
 export const SuccessCard = ({
-  college,
-  institute,
-  title,
-  rank,
-  desc,
-  className
+  collegeName,
+  instituteName,
+  studentName,
+  examAndRank,
+  successStory,
+  className,
+  studentImage
 }: SuccessCardProps) => {
   return (
     <div
@@ -30,20 +30,21 @@ export const SuccessCard = ({
     >
       <div>
         <Image
-          src="/images/igyanamLogo.png"
+          src={studentImage.url ?? ""}
           alt="hero Image"
-          width={100}
-          height={100}
+          width={200}
+          height={200}
           sizes="100vw"
+          className="rounded-full"
         />
       </div>
       <div className="gap-y-2 flex flex-col">
-        <h2>{title}</h2>
-        <h4>{institute}</h4>
-        <p>{desc}</p>
+        <h2>{studentName}</h2>
+        <h4 className="text-gray-500">{instituteName}</h4>
+        <p>{successStory}</p>
         <div className="flex items-center justify-between text-gray-600">
-          <span>{college}</span>
-          <span>{rank}</span>
+          <span className="p-1 font-bold bg-gray-300">{collegeName}</span>
+          <span className=" p-1 font-bold bg-gray-300">{examAndRank}</span>
         </div>
       </div>
     </div>
@@ -56,6 +57,7 @@ type SuccessSectionProps = {
 }
 
 const SuccessSection = ({ className, successStories }: SuccessSectionProps) => {
+  console.log(successStories)
   return (
     <div
       className={clsxm(
@@ -67,20 +69,31 @@ const SuccessSection = ({ className, successStories }: SuccessSectionProps) => {
       <h1>Student & Institutes Success Stories</h1>
       <p>We feel so proud that our product is changing lives.</p>
       <div className="md:grid-cols-2 grid grid-cols-1 gap-12 py-8">
-        {successStories.map(successStory => (
-          <SuccessCard
-            key={successStory.studentName}
-            imgUrl={successStory.studentImage.url}
-            title={successStory.studentName}
-            institute={successStory.instituteName}
-            desc={`${successStory.successStory?.substring(0, 100)}...`}
-            college={successStory.collegeName}
-            rank={successStory.examAndRank}
-            className="col-span-1"
-          />
-        ))}
+        {successStories.map((successStory, index) => {
+          while (index < 4) {
+            return (
+              <SuccessCard
+                key={successStory.studentName}
+                studentImage={successStory.studentImage}
+                studentName={successStory.studentName}
+                instituteName={successStory.instituteName}
+                successStory={`${successStory.successStory?.substring(
+                  0,
+                  100
+                )}...`}
+                collegeName={successStory.collegeName}
+                examAndRank={successStory.examAndRank}
+                className="col-span-1"
+              />
+            )
+          }
+        })}
       </div>
-      <ButtonLink href="/" variant="dark" className="self-center mb-2">
+      <ButtonLink
+        href="/success-stories"
+        variant="dark"
+        className="self-center mb-2"
+      >
         More Success Stories
       </ButtonLink>
     </div>
